@@ -1,0 +1,29 @@
+{
+  "name": "preprocessify",
+  "version": "0.0.1",
+  "description": "Browserify preprocess transform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanmuller/preprocessify.git"
+  },
+  "keywords": [
+    "browserify",
+    "preprocess",
+    "transform",
+    "browserify-transform"
+  ],
+  "author": "Evan Muller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanmuller/preprocessify/issues"
+  },
+  "homepage": "https://github.com/evanmuller/preprocessify",
+  "dependencies": {
+    "browserify-transform-tools": "^1.2.1",
+    "preprocess": "^2.0.0"
+  }
+}
