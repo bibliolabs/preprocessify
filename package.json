@@ -1,6 +1,6 @@
 {
   "name": "preprocessify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Browserify preprocess transform",
   "main": "index.js",
   "scripts": {
