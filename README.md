@@ -1,7 +1,7 @@
 preprocessify
 =============
 
-A browserify transform creator that applies [preprocess](https://github.com/jsoverson/preprocess") to js files before bundling them.
+A browserify transform creator that applies [preprocess](https://github.com/jsoverson/preprocess) to js files before bundling them.
 
 Example use in a gulp file...
 ```
@@ -50,4 +50,4 @@ gulp.task('browserify', function() {
 });
 ```
 
-See also: [preprocess](https://github.com/jsoverson/preprocess") and [gulp-preprocess](https://github.com/jas/gulp-preprocess)
+See also: [preprocess](https://github.com/jsoverson/preprocess) and [gulp-preprocess](https://github.com/jas/gulp-preprocess)
