@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/evanmuller/preprocessify",
   "dependencies": {
-    "browserify-transform-tools": "^1.2.1",
-    "preprocess": "^2.0.0"
+    "browserify-transform-tools": "~1.4.2",
+    "preprocess": "~3.0.2"
   }
 }
