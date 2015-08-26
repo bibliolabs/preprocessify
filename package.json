@@ -6,9 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "contributors": [
+    "BiblioLabs LLC. <it@bibliolabs.com> (http://www.biblioboard.com)"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/evanmuller/preprocessify.git"
+    "url": "https://github.com/bibliolabs/preprocessify.git"
   },
   "keywords": [
     "browserify",
@@ -16,12 +19,12 @@
     "transform",
     "browserify-transform"
   ],
-  "author": "Evan Muller",
+  "author": "BiblioLabs LLC.",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/evanmuller/preprocessify/issues"
+    "url": "https://github.com/bibliolabs/preprocessify/issues"
   },
-  "homepage": "https://github.com/evanmuller/preprocessify",
+  "homepage": "https://github.com/bibliolabs/preprocessify",
   "dependencies": {
     "browserify-transform-tools": "~1.4.2",
     "preprocess": "~3.0.2"
