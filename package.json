@@ -4,7 +4,7 @@
   "description": "Browserify preprocess transform",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "contributors": [
     "BiblioLabs LLC. <it@bibliolabs.com> (http://www.biblioboard.com)"
@@ -28,5 +28,11 @@
   "dependencies": {
     "browserify-transform-tools": "~1.4.2",
     "preprocess": "~3.0.2"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "path": "^0.12.7"
   }
 }

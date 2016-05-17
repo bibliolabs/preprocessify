@@ -1,21 +1,23 @@
 'use strict';
 
 var transformTools = require('browserify-transform-tools');
+var fs = require('fs');
 var pp = require('preprocess');
 
-module.exports = function(preprocessContext, options) {
-    options = options || {};
+module.exports = transformTools.makeStringTransform('preprocessify', {},
+    function (content, transformOptions, done) {
+        var config = transformOptions.config;
 
-    if (!options.includeExtensions) {
-        options.includeExtensions = [".js"];
-    }
+        var context;
 
-    if (!options.type) {
-        options.type = 'js';
-    }
+        if (config.context) {
+            context = config.context;
+        } else if (config.contextFile) {
+            context = JSON.parse(fs.readFileSync(config.contextFile, 'utf8'));
+        } else {
+            done(new Error('A context object or file must be specified (e.g. "browserify -t [preprocessify --contextFile ./path/to/file.json] app.js" or "b.transform(preprocessify, {context: {FOO:BAR}})"'));
+        }
 
-    return transformTools.makeStringTransform("preprocessify", options,
-            function (src, transformOptions, done) {
-                done(null, pp.preprocess(src, preprocessContext, options));
-            });
-};
+        done(null, pp.preprocess(content, context, {type: 'js'}));
+    });
+
