@@ -1,7 +1,12 @@
 preprocessify
 =============
 
-A browserify transform creator that applies [preprocess](https://github.com/jsoverson/preprocess) to js files before bundling them.
+A browserify transform that applies [preprocess](https://github.com/jsoverson/preprocess) to js files before bundling them.
+
+Example use on the command line
+```
+browserify -t [preprocessify --contextFile ./path/to/contextFile.json] entry.js
+```
 
 Example use in a gulp file...
 ```
@@ -9,10 +14,11 @@ var preprocessify = require('preprocessify');
 
 gulp.task('browserify', function() {
     return browserify('./app/scripts/main.js')
-        .external(libs)
-        .transform(preprocessify({"FOO": "bar"})) // This will replace "/* @echo FOO */" with "bar"
-        .transform(partialify)
-        .bundle({debug: true})
+        .transform(preprocessify, {
+            includeExtensions: ['.js'],
+            context: {"FOO": "bar"} // This will replace "/* @echo FOO */" with "bar"
+        })
+        .bundle()
         .pipe(source('main.js'))
         .pipe(gulp.dest(config.dist + '/scripts/'));
 });
@@ -41,10 +47,11 @@ var preprocessify = require('preprocessify');
 
 gulp.task('browserify', function() {
     return browserify('./app/scripts/main.js')
-        .external(libs)
-        .transform(preprocessify(config.app)) // When the environment variable NODE_ENV=test, "/* @echo bar */" gets replaced with "test bar value"
-        .transform(partialify)
-        .bundle({debug: true})
+        .transform(preprocessify, {
+            includeExtensions: ['.js'],
+            context: config.app // When the environment variable NODE_ENV=test, "/* @echo bar */" gets replaced with "test bar value"
+        })
+        .bundle()
         .pipe(source('main.js'))
         .pipe(gulp.dest(config.dist + '/scripts/'));
 });
