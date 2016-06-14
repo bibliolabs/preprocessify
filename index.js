@@ -15,9 +15,8 @@ module.exports = transformTools.makeStringTransform('preprocessify', {},
         } else if (config.contextFile) {
             context = JSON.parse(fs.readFileSync(config.contextFile, 'utf8'));
         } else {
-            done(new Error('A context object or file must be specified (e.g. "browserify -t [preprocessify --contextFile ./path/to/file.json] app.js" or "b.transform(preprocessify, {context: {FOO:BAR}})"'));
+            context = {};
         }
 
         done(null, pp.preprocess(content, context, {type: 'js'}));
     });
-
